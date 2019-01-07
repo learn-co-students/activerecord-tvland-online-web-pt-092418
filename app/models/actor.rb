@@ -2,10 +2,13 @@ class Actor < ActiveRecord::Base
   has_many :characters
   has_many :shows, through: :characters
 def full_name
-  self.create
+  name  = self.first_name + " " + self.last_name
+  name
 end
 def list_roles
-
+ role = self.characters(:name) + "-" + self.shows(:name)
+ 
+ role
 end
 
 end
