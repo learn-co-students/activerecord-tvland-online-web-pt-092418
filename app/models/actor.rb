@@ -6,8 +6,10 @@ def full_name
   name
 end
 def list_roles
- role = self.characters.name + "-" + self.shows.name
- role
+ self.characters.map {|character|
+   character.name + " - " + character.show.name
+ } 
+ 
 end
 
 end
