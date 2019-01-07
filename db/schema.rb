@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 9) do
 
   create_table "actors", force: :cascade do |t|
     t.string "first_name"
@@ -30,9 +30,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.integer "channel"
   end
 
-  create_table "shows", force: :cascade do |t|
-    t.string  "name"
-    t.integer "network_id"
-  end
+# Could not dump table "shows" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
